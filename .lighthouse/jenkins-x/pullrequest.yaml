@@ -26,6 +26,23 @@ spec:
           resources: {}
         - name: make-pr
           resources: {}
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.188
+          name: add-new-var
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            echo Newly added step
+            echo export MYVAR='foo' >> .jx/variables.sh
+            cat .jx/variables.sh
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.188
+          name: access-new-var
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            echo newly added step
+            source .jx/variables.sh
+            cat .jx/variables.sh
+            echo ${MYVAR}
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 12h0m0s
