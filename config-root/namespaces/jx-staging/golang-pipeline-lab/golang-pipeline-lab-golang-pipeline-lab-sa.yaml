@@ -1,0 +1,10 @@
+# Source: golang-pipeline-lab/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: golang-pipeline-lab-golang-pipeline-lab
+  annotations:
+    meta.helm.sh/release-name: 'golang-pipeline-lab'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
