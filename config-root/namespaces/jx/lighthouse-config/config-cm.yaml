@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        kardasa/golang-pipeline-lab: true
         kardasa/jx3-minikube-kardasa: true
         kardasa/node-lab-kardasa: true
     plank: {}
@@ -20,6 +21,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        kardasa/golang-pipeline-lab: merge
         kardasa/jx3-minikube-kardasa: merge
         kardasa/node-lab-kardasa: merge
       queries:
@@ -33,6 +35,7 @@ data:
         - needs-rebase
         repos:
         - kardasa/jx3-minikube-kardasa
+        - kardasa/golang-pipeline-lab
         - kardasa/node-lab-kardasa
       - labels:
         - updatebot
@@ -44,6 +47,7 @@ data:
         - needs-rebase
         repos:
         - kardasa/jx3-minikube-kardasa
+        - kardasa/golang-pipeline-lab
         - kardasa/node-lab-kardasa
       target_url: http://lighthouse-jx.192.168.39.172.nip.io/merge/status
 kind: ConfigMap

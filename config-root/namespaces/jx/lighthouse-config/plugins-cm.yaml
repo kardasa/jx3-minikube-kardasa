@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - kardasa/golang-pipeline-lab
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - kardasa/node-lab-kardasa
       require_self_approval: true
     cat: {}
@@ -20,6 +24,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      kardasa/golang-pipeline-lab:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       kardasa/jx3-minikube-kardasa:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -35,6 +44,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      kardasa/golang-pipeline-lab:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       kardasa/jx3-minikube-kardasa:
       - config-updater
       - approve
@@ -79,6 +104,9 @@ data:
     triggers:
     - repos:
       - kardasa/jx3-minikube-kardasa
+      trusted_org: todo
+    - repos:
+      - kardasa/golang-pipeline-lab
       trusted_org: todo
     - repos:
       - kardasa/node-lab-kardasa
