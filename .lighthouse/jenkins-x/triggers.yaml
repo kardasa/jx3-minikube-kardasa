@@ -38,7 +38,14 @@ spec:
             - needs-rebase
         review_approved_required: false
 
-
+  - name: chuck
+    context: "chuck"
+    always_run: false
+    optional: false
+    skip_report: true
+    trigger: "/jx chuck"
+    rerun_command: "/jx chuck"
+    source: "chuck.yaml"
   postsubmits:
   - name: bootjob
     context: "bootjob"
