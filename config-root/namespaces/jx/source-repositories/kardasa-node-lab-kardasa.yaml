@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: kardasa
+    provider: github
+    repository: node-lab-kardasa
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: kardasa-node-lab-kardasa
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/kardasa/node-lab-kardasa.git
+  org: kardasa
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: node-lab-kardasa
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/kardasa/node-lab-kardasa
