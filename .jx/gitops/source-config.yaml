@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: golang-pipeline-lab
+    - name: jx3-terraform
     - name: node-lab-kardasa
     scheduler: in-repo
   slack:
